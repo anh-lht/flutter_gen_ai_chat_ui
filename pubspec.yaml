@@ -58,13 +58,8 @@ dev_dependencies:
   speech_to_text: ^6.6.1
   network_image_mock: ^2.1.1
   golden_toolkit: ^0.15.0
-  integration_test:
-    sdk: flutter
 
 flutter:
   uses-material-design: true
 
   # Expose integration test files
-  assets:
-    - integration_test/
-    - integration_test/utils/

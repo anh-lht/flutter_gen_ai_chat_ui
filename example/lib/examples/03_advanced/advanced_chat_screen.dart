@@ -348,23 +348,23 @@ Try asking questions or exploring the settings panel to see these features in ac
                           showTime: true,
                           timeFormat: (dateTime) =>
                               '${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}',
-                          markdownStyleSheet: MarkdownStyleSheet(
-                            p: TextStyle(
-                              fontSize: appState.fontSize,
-                              color: isDark ? Colors.white : Colors.black87,
-                            ),
-                            code: TextStyle(
-                              fontFamily: 'monospace',
-                              backgroundColor: isDark
-                                  ? Colors.black.withOpacityCompat(0.3)
-                                  : Colors.grey.withOpacityCompat(0.2),
-                            ),
-                            codeblockDecoration: BoxDecoration(
-                              color: advancedTheme.codeBlockBackground,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            codeblockPadding: const EdgeInsets.all(12),
-                          ),
+                          // markdownStyleSheet: MarkdownStyleSheet(
+                          //   p: TextStyle(
+                          //     fontSize: appState.fontSize,
+                          //     color: isDark ? Colors.white : Colors.black87,
+                          //   ),
+                          //   code: TextStyle(
+                          //     fontFamily: 'monospace',
+                          //     backgroundColor: isDark
+                          //         ? Colors.black.withOpacityCompat(0.3)
+                          //         : Colors.grey.withOpacityCompat(0.2),
+                          //   ),
+                          //   codeblockDecoration: BoxDecoration(
+                          //     color: advancedTheme.codeBlockBackground,
+                          //     borderRadius: BorderRadius.circular(8),
+                          //   ),
+                          //   codeblockPadding: const EdgeInsets.all(12),
+                          // ),
                         ),
 
                         // Loading configuration

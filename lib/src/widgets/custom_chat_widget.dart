@@ -358,7 +358,7 @@ class _CustomChatWidgetState extends State<CustomChatWidget> {
     final maxWidth = isUser
         ? bubbleStyle.userBubbleMaxWidth ??
             (textSize.width < defaultMaxWidth
-                ? (115 + textSize.width)
+                ? (128 + textSize.width)
                 : defaultMaxWidth)
         : bubbleStyle.aiBubbleMaxWidth ??
             MediaQuery.of(context).size.width * 0.88;
@@ -514,36 +514,57 @@ class _CustomChatWidgetState extends State<CustomChatWidget> {
                                   letterSpacing: 0.2)),
 
                       // Premium footer with timestamp and action buttons
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: widget.messageOptions.showTime ? 8 : 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            // Show timestamp with refined styling
-                            if (widget.messageOptions.showTime)
-                              Text(
-                                widget.messageOptions.timeFormat != null
-                                    ? widget.messageOptions
-                                        .timeFormat!(message.createdAt)
-                                    : _defaultTimestampFormat(
-                                        message.createdAt),
-                                style: widget.messageOptions.timeTextStyle ??
-                                    TextStyle(
-                                      fontSize: 11,
-                                      letterSpacing: 0.1,
-                                      color: isDark
-                                          ? Colors.grey[500]
-                                          : Colors.grey[600],
-                                    ),
-                              ),
+                      // if (widget.messageOptions.showTime)
+                      //   Padding(
+                      //     padding: EdgeInsets.only(
+                      //         top: widget.messageOptions.showTime ? 8 : 0),
+                      //     child: Row(
+                      //       mainAxisSize: MainAxisSize.max,
+                      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //       crossAxisAlignment: CrossAxisAlignment.center,
+                      //       children: [
+                      //         // Show timestamp with refined styling
+                      //         if (widget.messageOptions.showTime)
+                      //           Text(
+                      //             widget.messageOptions.timeFormat != null
+                      //                 ? widget.messageOptions
+                      //                     .timeFormat!(message.createdAt)
+                      //                 : _defaultTimestampFormat(
+                      //                     message.createdAt),
+                      //             style: widget.messageOptions.timeTextStyle ??
+                      //                 TextStyle(
+                      //                   fontSize: 11,
+                      //                   letterSpacing: 0.1,
+                      //                   color: isDark
+                      //                       ? Colors.grey[500]
+                      //                       : Colors.grey[600],
+                      //                 ),
+                      //           ),
 
-                            // Show premium copy button for AI messages
-                          ],
+                      //         // Show premium copy button for AI messages
+                      //       ],
+                      //     ),
+                      //   ),
+
+                      if (widget.messageOptions.showTime)
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: widget.messageOptions.showTime ? 8 : 0),
+                          child: Text(
+                            widget.messageOptions.timeFormat != null
+                                ? widget.messageOptions
+                                    .timeFormat!(message.createdAt)
+                                : _defaultTimestampFormat(message.createdAt),
+                            style: widget.messageOptions.timeTextStyle ??
+                                TextStyle(
+                                  fontSize: 11,
+                                  letterSpacing: 0.1,
+                                  color: isDark
+                                      ? Colors.grey[500]
+                                      : Colors.grey[600],
+                                ),
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),
